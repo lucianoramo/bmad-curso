@@ -26,7 +26,11 @@ Neste tutorial vamos explorar o uso de **agentes de IA personalizados** — agen
 
 ## Preparação: Ambiente e Instalação
 
-Antes de qualquer coisa, abra o terminal [Detalhar CMD, Power Shell, terminal do linux] e verifique se as ferramentas necessárias estão instaladas:
+Antes de qualquer coisa, abra o terminal da na sua máquina.
+Em windows acionar no teclado a tecla `windows` e digitar cmd, vai aparecer o app prompt de comando.
+No Linux e MacOS abrir o aplicativo terminal
+
+Agora verifique se as ferramentas necessárias estão instaladas:
 
 **Ver se o nodeJS está instalado**
 
@@ -44,7 +48,7 @@ npm -v         # vem junto com o Node
 
 Deve aparecer algo como `npm v.11.9.0`, se não aparecer, conferir a instação no nodejs no passo anterior.
 
-**Agora o git, nosso controle de versão. Vamos testar se está instalado**
+**Agora o git, nosso controle de versão. Vamos testar se já está instalado**
 
 ```bash
 git --version
@@ -61,13 +65,19 @@ docker ps      # confirma que o Docker está ativo
 
 Se algum desses falhar, instale antes de continuar. Docker Desktop em [docker.com](https://www.docker.com/products/docker-desktop).
 
-**Tem uma IDE instalada?** Vscode, (Cursor, Visual Studio, etc.) Caso não tenha, sugerimos instalar o Vscode em [code.visualstudio.com](https://code.visualstudio.com/download).
+**Tem uma IDE instalada?** Vscode, Cursor, Visual Studio, etc? Caso não tenha, instalar o Vscode em [code.visualstudio.com](https://code.visualstudio.com/download).
 
-### Mas o que é o BMAD afinal?
+Após essa ferramentas instaladas, temos as ferramentas básicas para continuarmos o processo.
 
-Antes falar o que é agente e dar exemplo.
+### Mas o que um agente de IA?
+
+ **agente de IA**. Um agente é uma instância de um modelo de linguagem (como o GitHub Copilot) que recebe um conjunto de instruções específicas — um papel, um objetivo, um jeito de trabalhar — e age de acordo com elas. Em vez de conversar com um assistente genérico que faz de tudo, você conversa com um especialista configurado para aquela função: ele sabe o que perguntar, o que produzir e quando parar. No contexto do BMAD, cada agente é acionado por um comando no Copilot Chat e assume um papel diferente conforme a etapa do projeto.
+
+ ### E o BMAD?
 
 Pense no BMAD como um **time virtual de especialistas** que vai te acompanhar durante todo o desenvolvimento do projeto. Em vez de você tentar resolver tudo sozinho — o problema de negócio, o design, a arquitetura, o código — o BMAD coloca um especialista diferente em cada etapa: tem o analista que te ajuda a entender o problema, o designer que define como o app vai parecer, o arquiteto que decide a tecnologia, e o dev que realmente escreve o código. Cada um desses "especialistas" é um agente de IA que você aciona pelo GitHub Copilot, e eles conversam com você em linguagem natural, fazem perguntas, tomam decisões e produzem documentos reais que ficam salvos no seu projeto.
+
+Próximo passo é instalar o BMAD
 
 ### Instalando o BMAD
 
@@ -76,50 +86,63 @@ No terminal do seu sistema, crie uma pasta para o agenda clean. Onde todo projet
 ```bash
 mkdir agenda-clean
 cd agenda-clean
-code .
 ```
-Pasta criada vamos abrir o vscode.
 
+Pasta criada vamos abrir o vscode já na pasta atual (agenda-clean)
+
+```bash
 code . 
+```
 
-Dentro do vscode abra uma janela do terminal  `ctrl+'`
+Agora dentro do vscode abra uma janela do terminal usando o atalho `ctrl+'`
 
 Dentro deste terminal digite o comando
 
 ```bash
 npx bmad-method@latest install
 ```
-npx dá problema no powersheel, recomendado usar o prompt de comando.
 
 O instalador vai fazer algumas perguntas. Responda assim:
 
-```
+```bash
 ? Ok to proceed? Y
-? Instalation directory: 
+? Instalation directory: aceitar padrão (Enter)
 ? Install to this directory Y
 ? Select models to install: 
-Para selecionar é espaço e para confirmar Enter
-xBmad Core Module
-xBmad agile IA drive Development. 
-add custom modules agentts or workflows from your computer?
-N
-Integrate with 
-Claude e e github copilot 
+#Para selecionar utiliza barra de espaço e para confirmar Enter
+# Escolher 
+[x] Bmad Core Module
+[x] Bmad agile IA drive Development. 
+? add custom modules agents or workflows from your computer? N
+? Integrate with 
+#Para selecionar utiliza barra de espaço e para confirmar Enter
+# Escolher 
+[x]Claude 
+[x]Github copilot 
 
-? What is your project name?              → agenda-clean
-? What Should agents call you?                      → (seu nome)
-? What languages should agnets use when chatting with you?   → Portugues Brazil
-? Prefered document output language?
-? Where should output files be saved? 
-? Model integrations? Express        → intermediate
+? What is your project name?  → agenda-clean
+? What Should agents call you?   → (seu nome)
+? What languages should agnets use when chatting with you?  → Portugues Brazil
+? Prefered document output language?  → Portugues Brazil
+? Where should output files be saved? aceitar padrão (Enter)
+? Model integrations? Express
 ```
 
-Quando terminar, você vai ver uma pasta `_bmad/` criada no projeto e um arquivo `.github/copilot-instructions.md`. Esses dois arquivos são o que conectam o BMAD ao GitHub Copilot.
+O processo vai iniciar.
 
-Reiniciar o vscode. Selecionar o modo agent [colocar print]
-> **A instalação funcionou?** Abra a janela do Copilot Chat do VS Code e digite `/bmad:DITA:agent:analyst`. Se o agente responder algo semelhantes a isso.
+Quando terminar, você vai ver uma pasta `_bmad/` criada no projeto.
+
+Reiniciar o vscode.
+Abrir uma janela do copilot chat ```Vou colcoar um colocar print aqui```
+Selecionar o modo agent no copilot chat```Vou colcoar um colocar print aqui```
+
+Se tudo funcionou bem e você esta na janela do copilot chat...
+
+Abra a janela do Copilot Chat do VS Code e digite `/bmad:DITA:agent:analyst`. Se o agente responder algo semelhantes a isso.
 
 `Olá, {{seu nome}}! 📊 Sou a Mary, sua Analista de Negócios. Estou aqui para transformar ideias vagas em insights concretos — adoro um bom mistério de negócio para desvendar!`
+
+>Sucesso!! O BMAD está instalado e pronto para uso!
 
 ---
 
