@@ -26,7 +26,7 @@ Neste tutorial vamos explorar o uso de **agentes de IA personalizados** — agen
 
 ## Preparação: Ambiente e Instalação
 
-Antes de qualquer coisa, abra o terminal da na sua máquina.
+Antes de qualquer coisa, abra o terminal na sua máquina.
 Em windows acionar no teclado a tecla `windows` e digitar cmd, vai aparecer o app prompt de comando.
 No Linux e MacOS abrir o aplicativo terminal
 
@@ -46,7 +46,7 @@ Se não aparecer `node v.XX.x.x`, instalar em [nodejs.org](https://nodejs.org). 
 npm -v         # vem junto com o Node
 ```
 
-Deve aparecer algo como `npm v.11.9.0`, se não aparecer, conferir a instação no nodejs no passo anterior.
+Deve aparecer algo como `npm v.11.9.0`, se não aparecer, conferir a instalação no nodejs no passo anterior.
 
 **Agora o git, nosso controle de versão. Vamos testar se já está instalado**
 
@@ -67,7 +67,7 @@ Se algum desses falhar, instale antes de continuar. Docker Desktop em [docker.co
 
 **Tem uma IDE instalada?** Vscode, Cursor, Visual Studio, etc? Caso não tenha, instalar o Vscode em [code.visualstudio.com](https://code.visualstudio.com/download).
 
-Após essa ferramentas instaladas, temos as ferramentas básicas para continuarmos o processo.
+Após essas ferramentas instaladas, temos as ferramentas básicas para continuarmos o processo.
 
 ### Mas o que um agente de IA?
 
@@ -81,7 +81,7 @@ Próximo passo é instalar o BMAD
 
 ### Instalando o BMAD
 
-No terminal do seu sistema, crie uma pasta para o agenda clean. Onde todo projeto será armazenado, e BMAD será instalado.
+No terminal do seu sistema, crie uma pasta para o agenda-clean. Onde todo projeto será armazenado, e BMAD será instalado.
 
 ```bash
 mkdir agenda-clean
@@ -133,8 +133,8 @@ O processo vai iniciar.
 Quando terminar, você vai ver uma pasta `_bmad/` criada no projeto.
 
 Reiniciar o vscode.
-Abrir uma janela do copilot chat ```Vou colcoar um colocar print aqui```
-Selecionar o modo agent no copilot chat```Vou colcoar um colocar print aqui```
+Abrir uma janela do copilot chat ```Vou colocar um colocar print aqui```
+Selecionar o modo agent no copilot chat```Vou um colocar print aqui```
 
 Se tudo funcionou bem e você esta na janela do copilot chat...
 
