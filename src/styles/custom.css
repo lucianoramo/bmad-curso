@@ -1,0 +1,10 @@
+/* Esconder sidebar esquerda */
+.sidebar,
+.sidebar-pane {
+  display: none !important;
+}
+
+/* Remover o offset do conteúdo causado pela sidebar sem quebrar o cálculo do right-sidebar */
+[data-has-sidebar] {
+  --sl-content-inline-start: 0rem !important;
+}
