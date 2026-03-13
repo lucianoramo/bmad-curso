@@ -26,7 +26,7 @@ Neste tutorial vamos explorar o uso de **agentes de IA personalizados** — agen
 
 ## Preparação: Ambiente e Instalação
 
-Antes de qualquer coisa, abra o terminal e verifique se as ferramentas necessárias estão instaladas:
+Antes de qualquer coisa, abra o terminal [Detalhar CMD, Power Shell, terminal do linux] e verifique se as ferramentas necessárias estão instaladas:
 
 **Ver se o nodeJS está instalado**
 
@@ -34,7 +34,7 @@ Antes de qualquer coisa, abra o terminal e verifique se as ferramentas necessár
 node -v        # precisa ser v18 ou superior
 ```
 
-Se não aparecer `node v.XX.x.x`, instalar em [nodejs.org](https://nodejs.org). Esclhoer a versão **v24.x.x(LTS)**. Após a instação completa, rodar `node -v` novamente e ver se retornou algo tipo `v24.14.10`.
+Se não aparecer `node v.XX.x.x`, instalar em [nodejs.org](https://nodejs.org). Escolher a versão **v24.x.x(LTS)**. Após a instação completa, rodar `node -v` novamente e ver se retornou algo tipo `v24.14.10`.
 
 **Com o nodejs instalado, vamos ver agora o npm.**
 
@@ -50,7 +50,7 @@ Deve aparecer algo como `npm v.11.9.0`, se não aparecer, conferir a instação 
 git --version
 ```
 
-Deve aparecer algo como `git version 2.43.0`, se não aparecer, instalar em [git-scm.com](https://git-scm.com/install/). e fazer novamente o teste.
+Deve aparecer algo como `git version 2.43.0`, se não aparecer, instalar em [git-scm.com](https://git-scm.com/install/), escolher versão x64 e fazer novamente o teste.
 
 **Vamos ver se o Docker está instalado.**
 
@@ -65,7 +65,9 @@ Se algum desses falhar, instale antes de continuar. Docker Desktop em [docker.co
 
 ### Mas o que é o BMAD afinal?
 
-Pense no BMAD como um **time virtual de especialistas** que vai te acompanhar durante todo o desenvolvimento do projeto. Em vez de você tentar resolver tudo sozinho — o problema de negócio, o design, a arquitetura, o código — o BMAD coloca um especialista diferente em cada etapa: tem o analista que te ajuda a entender o problema, o designer que define como o app vai parecer, o arquiteto que decide a tecnologia, e o dev que realmente escreve o código. Cada um desses "especialistas" é um agente de IA que você aciona pelo GitHub Copilot, e eles conversam com você em linguagem, fazem perguntas, tomam decisões e produzem documentos reais que ficam salvos no seu projeto.
+Antes falar o que é agente e dar exemplo.
+
+Pense no BMAD como um **time virtual de especialistas** que vai te acompanhar durante todo o desenvolvimento do projeto. Em vez de você tentar resolver tudo sozinho — o problema de negócio, o design, a arquitetura, o código — o BMAD coloca um especialista diferente em cada etapa: tem o analista que te ajuda a entender o problema, o designer que define como o app vai parecer, o arquiteto que decide a tecnologia, e o dev que realmente escreve o código. Cada um desses "especialistas" é um agente de IA que você aciona pelo GitHub Copilot, e eles conversam com você em linguagem natural, fazem perguntas, tomam decisões e produzem documentos reais que ficam salvos no seu projeto.
 
 ### Instalando o BMAD
 
@@ -74,26 +76,47 @@ No terminal do seu sistema, crie uma pasta para o agenda clean. Onde todo projet
 ```bash
 mkdir agenda-clean
 cd agenda-clean
+code .
 ```
+Pasta criada vamos abrir o vscode.
 
-Pastas criadas, instalar o BMAD
+code . 
+
+Dentro do vscode abra uma janela do terminal  `ctrl+'`
+
+Dentro deste terminal digite o comando
 
 ```bash
-npx bmad-method@latest
+npx bmad-method@latest install
 ```
+npx dá problema no powersheel, recomendado usar o prompt de comando.
 
 O instalador vai fazer algumas perguntas. Responda assim:
 
 ```
+? Ok to proceed? Y
+? Instalation directory: 
+? Install to this directory Y
+? Select models to install: 
+Para selecionar é espaço e para confirmar Enter
+xBmad Core Module
+xBmad agile IA drive Development. 
+add custom modules agentts or workflows from your computer?
+N
+Integrate with 
+Claude e e github copilot 
+
 ? What is your project name?              → agenda-clean
-? What is your name?                      → (seu nome)
-? What is your communication language?   → Portugues Brazil
-? What modules would you like to install? → BMM (BMAD Method Module)
-? What is your user skill level?          → intermediate
+? What Should agents call you?                      → (seu nome)
+? What languages should agnets use when chatting with you?   → Portugues Brazil
+? Prefered document output language?
+? Where should output files be saved? 
+? Model integrations? Express        → intermediate
 ```
 
 Quando terminar, você vai ver uma pasta `_bmad/` criada no projeto e um arquivo `.github/copilot-instructions.md`. Esses dois arquivos são o que conectam o BMAD ao GitHub Copilot.
 
+Reiniciar o vscode. Selecionar o modo agent [colocar print]
 > **A instalação funcionou?** Abra a janela do Copilot Chat do VS Code e digite `/bmad:DITA:agent:analyst`. Se o agente responder algo semelhantes a isso.
 
 `Olá, {{seu nome}}! 📊 Sou a Mary, sua Analista de Negócios. Estou aqui para transformar ideias vagas em insights concretos — adoro um bom mistério de negócio para desvendar!`
