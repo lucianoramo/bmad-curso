@@ -27,7 +27,7 @@ Neste tutorial vamos explorar o uso de **agentes de IA personalizados** — agen
 ## Preparação: Ambiente e Instalação
 
 Antes de qualquer coisa, abra o terminal da na sua máquina.
-Em windows acionar no teclado a tecla `windows` e digitar cmd, vai aparecer o app prompt de comando.
+Em windows acionar no teclado a tecla `windows + r ` , digitar cmd e dar `Enter`  vai aparecer o app prompt de comando.
 No Linux e MacOS abrir o aplicativo terminal
 
 Agora verifique se as ferramentas necessárias estão instaladas:
@@ -38,7 +38,17 @@ Agora verifique se as ferramentas necessárias estão instaladas:
 node -v        # precisa ser v18 ou superior
 ```
 
-Se não aparecer `node v.XX.x.x`, instalar em [nodejs.org](https://nodejs.org). Escolher a versão **v24.x.x(LTS)**. Após a instação completa, rodar `node -v` novamente e ver se retornou algo tipo `v24.14.10`.
+Se não aparecer `node v.XX.x.x`, instalar em [nodejs.org](https://nodejs.org). Escolher a versão **v24.x.x(LTS)**. 
+
+![Screenshot_31](../assets/Screenshot_31.png)
+--
+![Screenshot_32](../assets/Screenshot_32.png)
+
+Siga o fluxo de instalação clicando en `Next` até finalizar a instalação.
+
+Após a instação completa, rodar `node -v` novamente e ver se retornou.
+
+![Screenshot_33](../assets/Screenshot_33.png)
 
 **Com o nodejs instalado, vamos ver agora o npm.**
 
@@ -48,24 +58,55 @@ npm -v         # vem junto com o Node
 
 Deve aparecer algo como `npm v.11.9.0`, se não aparecer, conferir a instação no nodejs no passo anterior.
 
+```bash
+C:\Seu usuario>npm -v
+11.9.0
+```
+
 **Agora o git, nosso controle de versão. Vamos testar se já está instalado**
 
 ```bash
-git --version
+C:\Seu usuario>git --version
+git version 2.40.0.windows.1
 ```
 
-Deve aparecer algo como `git version 2.43.0`, se não aparecer, instalar em [git-scm.com](https://git-scm.com/install/), escolher versão x64 e fazer novamente o teste.
+Deve aparecer algo como `git version 2.43.0`, se não aparecer, instalar em [git-scm.com](https://git-scm.com/install/), escolher versão x64 
+
+![Screenshot_35](../assets/Screenshot_35.png)
+
+Ir dando `Next` até a tela abaixo, onde deve escolher Use Windows default console window.
+
+![Screenshot_36](../assets/Screenshot_36.png)
+
+Ao finalizar a instalação, voltar ao prompt de comando e testar. Se aparec algo assim. Git instalado!
+
+```bash
+C:\Seu usuario>git --version
+git version 2.53.0.windows.1
+```
 
 **Vamos ver se o Docker está instalado.**
 
 ```bash
-docker -v      # precisa estar rodando
-docker ps      # confirma que o Docker está ativo
+ # testar se o docker está instalado
+
+C:\Seu Usuario> docker -v
+
+#caso apareça uma mensagem como abaixo
+
+'docker' is not recognized as an internal or external command,
+operable program or batch file.
+
+#precisa instalar o docker. veja abaixo como instalar
 ```
 
 Se algum desses falhar, instale antes de continuar. Docker Desktop em [docker.com](https://www.docker.com/products/docker-desktop).
 
-**Tem uma IDE instalada?** Vscode, Cursor, Visual Studio, etc? Caso não tenha, instalar o Vscode em [code.visualstudio.com](https://code.visualstudio.com/download).
+![Screenshot_37](../assets/Screenshot_37.png)
+
+### Tem uma IDE instalada? ###
+
+ Vscode, Cursor, Visual Studio, etc? Caso não tenha, instalar o Vscode em [code.visualstudio.com](https://code.visualstudio.com/download).
 
 Após essa ferramentas instaladas, temos as ferramentas básicas para continuarmos o processo.
 
