@@ -11,16 +11,6 @@ Neste tutorial vamos explorar o uso de **agentes de IA personalizados** — agen
 
 - [Preparação: Ambiente e Instalação](#preparação-ambiente-e-instalação)
 - [Entendendo as Fases do Processo](#entendendo-as-fases-do-processo)
-- [Etapa 0 — Início + Bônus (bmad-help)](#etapa-0---inicio--bônus-bmad-help)
-- [Etapa 1 — Análise: A Mary descobre o problema](#etapa-1--análise-a-mary-descobre-o-problema)
-- [Etapa 2 — PRD: O John formaliza os requisitos](#etapa-2--prd-o-john-formaliza-os-requisitos)
-- [Etapa 3 — UX Design: A Sally define a experiência](#etapa-3--ux-design-a-sally-define-a-experiência)
-- [Etapa 4 — Arquitetura: O Winston toma as decisões técnicas](#etapa-4--arquitetura-o-winston-toma-as-decisões-técnicas)
-- [Etapa 5 — Épicos e Stories: O Bob organiza o trabalho](#etapa-5--épicos-e-stories-o-bob-organiza-o-trabalho)
-- [Etapa 6 — Implementação: A Amelia escreve o código](#etapa-6--implementação-a-amelia-escreve-o-código)
-- [Um Desvio: Party Mode](#um-desvio-party-mode)
-- [Onde o Projeto Chegou](#onde-o-projeto-chegou)
-- [Seu Próximo Passo](#seu-próximo-passo)
 
 ---
 
@@ -281,24 +271,3 @@ Fase 4 — Implementation [OBRIGATÓRIO]
 
 ---
 
-## Etapa 0 - Início + Bônus (bmad-help)
-
-Agora que entendemos por quais etapas vamos passar e o que cada uma representa, vamos começar a usar o BMAD de fato.
-
-Antes de entrar nas etapas, é importante conhecer o `/bmad-help`. Ele é um assistente de orientação que você pode usar a qualquer momento, de dentro de qualquer agente, para perguntar o que fazer a seguir.
-
-```bash
-#Você pode usá-lo de forma genérica
-/bmad-help
-
-#ou combinado com o que está tentando resolver, por exemplo:
-/bmad-help tenho um brief pronto, qual é o próximo passo?
-
-/bmad-help não sei se minha ideia precisa de análise de mercado
-```
-
-O agente ativo vai responder com uma orientação contextual baseada na fase em que você está, ajudando você a não se perder no processo.
-
-Então, vamos colocar a mão na massa!
-
----
