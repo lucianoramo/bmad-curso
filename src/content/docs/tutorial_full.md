@@ -46,7 +46,9 @@ Se não aparecer `node v.XX.x.x`, instale em [nodejs.org](https://nodejs.org). E
 
 Siga o fluxo de instalação clicando em `Next` até finalizar.
 
-Após a instalação completa, rode `node -v` novamente e verifique se retornou.
+Durante a instalação pode aparecer uma janela de consentimento perguntando se aceita instalar o programa no seu computador. Aceitar e seguir
+
+Após a instalação completa, feche o Prompt de Comando  e abra de novo. O comando não irá funcionar se não reiniciar. Rode `node -v` novamente e verifique se retornou.
 
 ![Screenshot_33](../assets/Screenshot_33.png)
 
@@ -78,7 +80,7 @@ Ir dando `Next` até a tela abaixo, onde deve escolher Use Windows default conso
 
 ![Screenshot_36](../assets/Screenshot_36.png)
 
-Ao finalizar a instalação, volte ao Prompt de Comando e teste. Se aparecer algo assim, Git instalado!
+Ao finalizar a instalação, feche o Prompt de Comando e abra de novo. Depois teste novamente. Se aparecer algo assim, Git instalado!
 
 ```bash
 C:\Seu usuario>git --version
@@ -122,7 +124,7 @@ Próximo passo é instalar o BMAD
 
 ### Instalando o BMAD
 
-No terminal do seu sistema, crie uma pasta para o agenda-clean. É nela que todo o projeto será armazenado e onde o BMAD será instalado.
+No Prompt de Comando do seu sistema, crie uma pasta para o agenda-clean. É nela que todo o projeto será armazenado e onde o BMAD será instalado.
 
 ```bash
 mkdir agenda-clean
@@ -137,6 +139,10 @@ code .
 
 Agora, dentro do VS Code, abra uma janela do terminal usando o atalho `Ctrl + shift + '`. 
 ![Screenshot_38](../assets/Screenshot_38.png)
+
+Escolha o command promt como tipo de terminal conforme imagm abaixo.
+
+![Screenshot_49](../assets/Screenshot_49.png)
 
 Dentro deste terminal digite o comando
 
@@ -177,7 +183,7 @@ Usar seta para baixo ⬇️ para navegar entre as opções. e `Enter`para confir
 * What languages should agents use when chatting with you?  → Portugues Brazil
 * Prefered document output language?  → Portugues Brazil
 * Where should output files be saved? aceitar padrão (Enter)
-* Model integrations? Express
+* Model configuration? Express
 ```
 
 O processo vai iniciar.
