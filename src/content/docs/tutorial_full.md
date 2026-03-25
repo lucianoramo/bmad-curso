@@ -309,7 +309,7 @@ Então, vamos colocar a mão na massa!
 
 ---
 
-## Etapa 1 — Análise: A Mary descobre o problema
+## Etapa 1 — Análise: A Mary descobre o problema - Briefing
 
 ### Por que começar pela análise?
 
@@ -320,10 +320,30 @@ Sabemos que a tentação é abrir o Copilot e já começar com um comando do tip
 No Copilot Chat, digite:
 
 ```
-/bmad:DITA:agent:analyst
+/bmad-analyst
 ```
 
-A Mary vai se apresentar com um menu. Selecione a opção de criar um **Product Brief** (geralmente opção `PB` ou número correspondente).
+A Mary vai se apresentar com um menu. 
+
+Menu de Opções
+1. **[MH]** Redisplay Menu Help
+2. **[CH]** Chat com o Agente sobre qualquer coisa
+3. **[BP]** Brainstorm Project — Facilitação especializada com técnicas variadas e relatório final
+4. **[MR]** Market Research — Análise de mercado, paisagem competitiva, necessidades de clientes e tendências
+5. **[DR]** Domain Research — Imersão profunda em domínio industria, expertise técnica e terminologia
+6. **[TR]** Technical Research — Viabilidade técnica, opções de arquitetura e abordagens de implementação
+7. **[CB]** Create Brief — Experiência guiada para transformar sua ideia em um executive brief
+8. **[DP]** Document Project — Analisar um projeto existente e produzir documentação útil
+9. **[PM]** Start Party Mode — Modo colaborativo e criativo
+10. **[DA]** Dismiss Agent — Encerrar sessão
+
+Normalmente, em um projeto completo, escolheriamos  a opção de criar um **Product Brief** (geralmente opção `CB` ou número correspondente).
+
+!Para efeito desse projeto vamos trabalhar com um briefing pronto, já definido e enviado pelo cliente.
+
+Vamos criar uma pasta na raiz do projeto chamada `/docs` e colocar o arquivos briefing.md nela.
+
+
 
 ### O que a Mary vai perguntar
 
