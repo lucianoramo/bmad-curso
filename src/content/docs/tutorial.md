@@ -305,80 +305,11 @@ Então, vamos colocar a mão na massa!
 
 Sabemos que a tentação é abrir o Copilot e já começar com um comando do tipo: ***"criar um site de agendamento de limpeza de sofá"*** ou, para alguns, seria: ***"crie o banco de dados com os campos de usuário, tipo de sofá e data"***, ou ainda, ***"desenhe a tela do formulário de pedido"***. Mas sem entender **o problema real**, você vai construir a solução errada. A Mary existe para forçar essa reflexão antes de qualquer decisão técnica.
 
-### Acionando a Mary
-
-No Copilot Chat, digite:
-
-```
-/bmad-analyst
-```
-
-A Mary vai se apresentar com um menu. 
-
-Menu de Opções
-1. **[MH]** Redisplay Menu Help
-2. **[CH]** Chat com o Agente sobre qualquer coisa
-3. **[BP]** Brainstorm Project — Facilitação especializada com técnicas variadas e relatório final
-4. **[MR]** Market Research — Análise de mercado, paisagem competitiva, necessidades de clientes e tendências
-5. **[DR]** Domain Research — Imersão profunda em domínio industria, expertise técnica e terminologia
-6. **[TR]** Technical Research — Viabilidade técnica, opções de arquitetura e abordagens de implementação
-7. **[CB]** Create Brief — Experiência guiada para transformar sua ideia em um executive brief
-8. **[DP]** Document Project — Analisar um projeto existente e produzir documentação útil
-9. **[PM]** Start Party Mode — Modo colaborativo e criativo
-10. **[DA]** Dismiss Agent — Encerrar sessão
-
 Normalmente, em um projeto completo, escolheriamos  a opção de criar um **Product Brief** (geralmente opção `CB` ou número correspondente).
 
 !Para efeito desse projeto vamos trabalhar com um briefing pronto, já definido e enviado pelo cliente.
 
-Vamos criar uma pasta na raiz do projeto chamada `/docs` e colocar o arquivos briefing.md nela.
-
-
-
-### O que a Mary vai perguntar
-
-A Mary conduz uma entrevista estruturada. Ela não aceita respostas vagas. Para o agenda-clean, as perguntas foram parecidas com estas:
-
-> **Mary:** "Descreva o negócio em uma frase. Quem é o dono e o que ele vende?"
-
-**Resposta dada:** *"Empresa de limpeza de sofá. Um prestador de serviço autônomo que atende residências."*
-
-> **Mary:** "Como os agendamentos são feitos hoje? Qual é o maior problema no processo atual?"
-
-**Resposta dada:** *"Via WhatsApp e ligação. O maior problema é conflito de horário e falta de histórico."*
-
-> **Mary:** "Quem são os usuários do sistema? Há mais de um perfil?"
-
-**Resposta dada:** *"Sim. O cliente (quem agenda o serviço) e o admin (o próprio prestador, que gerencia tudo)."*
-
-> **Mary:** "Você mencionou conflito de horário. Como isso acontece hoje e como o sistema deve resolver?"
-
-**Resposta dada:** *"Acontece porque duas pessoas podem ligar pedindo o mesmo horário. O sistema precisa bloquear automaticamente um horário já ocupado."*
-
-> **Mary:** "Soluções como Google Agenda ou Calendly não resolveriam isso? O que falta nessas opções?"
-
-**Resposta dada:** *"Falta: controle de status do serviço (solicitado, confirmado, em atendimento...), criação de conta automática no primeiro acesso pelo Google, e a simplicidade de um sistema focado nesse nicho específico."*
-
-### O que a Mary produz
-
-Depois de 5 a 8 rodadas de perguntas e respostas, a Mary consolida tudo e escreve o **Product Brief**. Ela salva automaticamente o arquivo:
-
-```
-_bmad-output/planning-artifacts/product-brief-agenda-clean-2026-03-10.md
-```
-
-O brief tem:
-
-- **Executive Summary** — o problema em 3 frases
-- **Personas** — Ana (cliente) e o Gestor (admin), com contexto, dores e fluxo de uso real
-- **Proposta de valor** — o que diferencia o agenda-clean de qualquer outro agendador
-- **Funcionalidades core** — sem entrar em detalhe técnico; só o que o produto precisa fazer
-
-> **Ponto de aprendizado:** veja como a diferenciação principal não é técnica — é de negócio. "Zero fricção de onboarding com Google OAuth" é uma decisão de produto, não de arquitetura. A Arquitetura vai vir depois, respeitando essa decisão.
-
-Abra o arquivo gerado em `_bmad-output/planning-artifacts/product-brief-agenda-clean-2026-03-10.md` e leia a seção de personas. Repare que a Ana não é uma persona técnica — ela é uma pessoa real com uma dor real. Isso vai guiar todas as decisões de UX mais tarde.
-
-**A etapa está completa quando:** o Product Brief existe em `_bmad-output/planning-artifacts/` e você consegue explicar o problema do sistema em 2 frases sem consultar o documento.
+Vamos copiar o arquivo product-brief-agenda-clean-2026-03-10.md para a pasta raiz do projeto.
 
 ---
 
@@ -390,47 +321,25 @@ O Product Brief diz "o quê" em linguagem de negócio. O PRD transforma isso em 
 
 ### Acionando o John
 
-No Copilot Chat, encerre a Mary (opção `DA`) e ative o PM:
-
 ```
 /bmad-agent-pm #product-brief-agenda-clean-2026-03-10.md
 ```
 
-Selecione a opção de **criar PRD** e passe o caminho do Product Brief quando ele pedir.
+![Screenshot_41](../assets/Screenshot2026-04-0175545.png)
+
+Selecione a opção de **criar PRD**  (CP) e passe o caminho do arquivo de briefing se ele pedir novamente product-brief-agenda-clean-2026-03-10.md
 
 ### Como a conversa evolui
 
-O John usa o Product Brief como base mas vai **aprofundar cada ponto**. Algumas das perguntas que ele fez:
+![Screenshot_41](../assets/Screenshot2026-04-01180540.png)
 
-> **John:** "O brief menciona 'controle de status'. Quais são os status possíveis e quem pode mudar cada um?"
+---
 
-**Decisão tomada:** *Status: `solicitado → confirmado → em_atendimento → concluído / cancelado`. Só o admin muda. O cliente só lê.*
+![alt text](../assets/Screenshot2026-04-01180651.png)
 
-> **John:** "Quando um agendamento é cancelado, o horário deve ficar disponível automaticamente para outro cliente?"
+---
 
-**Decisão tomada:** *Sim. O cancelado não conta como conflito. Isso é uma regra de negócio crítica.*
-
-> **John:** "O sistema precisa enviar notificações (e-mail, WhatsApp) para o cliente quando o status mudar?"
-
-**Decisão tomada:** *Não para o MVP. O cliente verifica o status no sistema.*
-
-> **John:** "Como o sistema vai saber quem é o admin? Haverá múltiplos admins?"
-
-**Decisão tomada:** *Um único admin identificado pelo e-mail (`ADMIN_EMAIL` em variável de ambiente). Múltiplos admins fica para depois do MVP.*
-
-Essas decisões se tornam **requisitos funcionais** numerados no PRD.
-
-### A regra que o John identificou como crítica
-
-Durante a conversa sobre disponibilidade de slots, o John formalizou o requisito mais importante do sistema:
-
-> **FR20:** Sistema impede a criação de dois agendamentos ativos no mesmo dia e horário via validação **enforced no backend**.
-
-E complementou com um requisito não-funcional:
-
-> **NFR11:** Regra de bloqueio de double-booking é enforced no backend via transação atômica, não podendo ser contornada via requisição direta à API.
-
-Repare na palavra "enforced no backend". Isso não é detalhe de implementação — é **requisito de segurança**. Se a validação ficasse só no frontend, um usuário mal-intencionado poderia fazer uma requisição direta à API e criar um conflito de horário. O John não deixou esse ponto vago.
+Serão **11 passos** para a contrução do PRD. Agora seguiremos respondendo as perguntas e interagindo com o John.
 
 ### O que o John produz
 
