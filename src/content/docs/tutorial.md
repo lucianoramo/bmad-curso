@@ -341,21 +341,4 @@ Selecione a opção de **criar PRD**  (CP) e passe o caminho do arquivo de brief
 
 Serão **11 passos** para a contrução do PRD. Agora seguiremos respondendo as perguntas e interagindo com o John.
 
-### O que o John produz
-
-O PRD é dividido em vários arquivos dentro de:
-
-```
-_bmad-output/planning-artifacts/prd/
-├── functional-requirements.md      ← FR1 a FR24
-├── non-functional-requirements.md  ← NFR1 a NFR20
-├── user-journeys.md                 ← Jornada da Ana, do Carlos, do Gestor
-├── product-scope.md
-└── success-criteria.md
-```
-
-Abra `functional-requirements.md`. O documento tem **24 requisitos funcionais** organizados por área: autenticação, agendamento (cliente), gestão (admin) e regras de negócio. Cada um tem um ID (FR1, FR2...) que vai ser referenciado nas stories da implementação.
-
-**A etapa está completa quando:** você consegue abrir o PRD e dizer, para qualquer requisito, se ele é funcional ou não-funcional e quem é o ator.
-
 ---
